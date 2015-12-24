@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/ombulabs/bitpagos"
   s.license     = "MIT"
 
+  s.add_dependency("rest-client", "~> 1.8")
   s.add_development_dependency("rspec", "~> 3.3")
   s.add_development_dependency("rake", "~> 10.4")
   s.add_development_dependency("pry-byebug", "~> 3.2")
