@@ -1,5 +1,9 @@
 module Bitpagos
   class Client
+    PENDING = "PE".freeze
+    WAITING = "WA".freeze
+    COMPLETED = "CO".freeze
+    PARTIALLY_PAID = "PP".freeze
     API_BASE = "https://www.bitpagos.com/api/v1".freeze
 
     attr_accessor :headers, :api_base
@@ -15,6 +19,7 @@ module Bitpagos
     end
 
     def get_transaction(transaction_id)
+      retrieve_transactions(nil, transaction_id)
     end
 
     def all_transactions
@@ -22,16 +27,19 @@ module Bitpagos
     end
 
     def completed_transactions
-      retrieve_transactions
+      retrieve_transactions(COMPLETED)
     end
 
     def waiting_transactions
+      retrieve_transactions(WAITING)
     end
 
     def pending_transactions
+      retrieve_transactions(PENDING)
     end
 
     def partially_paid_transactions
+      retrieve_transactions(PARTIALLY_PAID)
     end
 
     private
