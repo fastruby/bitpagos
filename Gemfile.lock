@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bitpagos (0.2.1)
+    bitpagos (0.2.2)
       rest-client (~> 1.8)
 
 GEM
