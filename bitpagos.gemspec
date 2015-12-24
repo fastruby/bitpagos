@@ -10,5 +10,11 @@ Gem::Specification.new do |s|
   s.email       = "hola@ombulabs.com"
   s.files       = Dir["lib/**/**.rb"]
   s.homepage    = "http://github.com/ombulabs/bitpagos"
-  s.license       = "MIT"
+  s.license     = "MIT"
+
+  s.add_development_dependency("rspec", "~> 3.3")
+  s.add_development_dependency("rake", "~> 10.4")
+  s.add_development_dependency("pry-byebug", "~> 3.2")
+  s.add_development_dependency("webmock", "~> 1.21")
+  s.add_development_dependency("vcr", "~> 2.9")
 end
