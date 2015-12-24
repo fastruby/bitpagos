@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    bitpagos (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bitpagos!
+
+BUNDLED WITH
+   1.10.3
