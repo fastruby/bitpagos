@@ -31,6 +31,13 @@ RSpec.describe Bitpagos::Client do
       it "doesn't raise any errors" do
         expect { subject }.not_to raise_exception
       end
+
+      it "generates the headers correctly" do
+        expected_headers = { authorization: "ApiKey #{api_key}",
+          content_type: :json, accept: :json }
+
+        expect(subject.headers).to eq(expected_headers)
+      end
     end
   end
 end
