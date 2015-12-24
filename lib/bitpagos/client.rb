@@ -42,11 +42,19 @@ module Bitpagos
       retrieve_transactions(PARTIALLY_PAID)
     end
 
+    # Returns the total count of transactions in all states.
+    #
+    # @return [Integer] Total transaction count
+    def transaction_count
+      all_transactions["meta"]["total_count"]
+    end
+
     private
 
     def retrieve_transactions(query = nil, transaction_id = nil)
       url = "#{API_BASE}/transaction/#{transaction_id}"
-      RestClient.get(url, headers)
+      response = RestClient.get(url, headers)
+      JSON.parse(response)
     end
   end
 end
