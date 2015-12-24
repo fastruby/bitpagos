@@ -9,7 +9,7 @@ module Bitpagos
         raise Bitpagos::Errors::InvalidApiKey.new("No API key provided")
       end
 
-      @api_key = "ApiKey #{api_key}"
+      @api_key = "ApiKey #{api_key}".freeze
       @headers = { authorization: @api_key, content_type: :json, accept: :json }
       @api_base = API_BASE
     end
