@@ -57,7 +57,7 @@ module Bitpagos
     # @param [String] Transaction ID
     # @return [Hash]
     def retrieve_transactions(query = nil, transaction_id = nil)
-      headers.merge!({ params: { status: query } }) if query
+      headers.merge!(params: { status: query }) if query
       url = "#{API_BASE}/transaction/#{transaction_id}"
       response = RestClient.get(url, headers)
       JSON.parse(response)
