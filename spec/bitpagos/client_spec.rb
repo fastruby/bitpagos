@@ -28,7 +28,7 @@ RSpec.describe Bitpagos::Client do
 
     context "API key provided is invalid" do
       let(:api_key) { "OMGSARASA" }
-      let(:exception) { RestClient::Unauthorized }
+      let(:exception) { Bitpagos::Errors::Unauthorized }
 
       it "returns a 401 code" do
         VCR.use_cassette("unauthorized_request") do
