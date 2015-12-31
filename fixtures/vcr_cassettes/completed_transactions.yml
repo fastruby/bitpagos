@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bitpagos.com/api/v1/transaction/?status=CO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept: application/json
+      Accept-Encoding: gzip, deflate
+      Authorization: ApiKey 4141414141414
+      Content-Type: application/json
+      User-Agent: Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server: cloudflare-nginx
+      Date: Thu, 31 Dec 2015 14:11:51 GMT
+      Content-Type: application/json
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Xss-Protection: 1; mode=block
+      Content-Language: es-ar
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=15552000
+      Vary: Accept, Accept-Language, Cookie
+      Cache-Control: no-cache
+      X-Frame-Options: DENY
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "meta": {
+            "limit": 20,
+            "next": "?status=CO&limit=20&offset=20",
+            "offset": 0,
+            "previous": null,
+            "total_count": 3
+          },
+          "objects": [
+            {
+              "amount": 0.1,
+              "btc": "0.00011545",
+              "client_email": null,
+              "currency": "ARS",
+              "date_created": "2014-05-27T10:42:17",
+              "date_paid": "2014-05-27T10:42:34",
+              "date_rate": "2014-05-27T10:42:19",
+              "description": "checkout 2295",
+              "id": 5369,
+              "is_waiting": "False",
+              "reference_id": "R420234701",
+              "resource_uri": "",
+              "status": "CO",
+              "to_address": "1343245235325235235",
+              "txn_id": "1234",
+              "txn_type": "BTC"
+            },
+            {
+              "amount": 0.1,
+              "btc": "0.00011811",
+              "client_email": null,
+              "currency": "ARS",
+              "date_created": "2014-05-20T15:34:05",
+              "date_paid": "2014-05-20T15:35:22",
+              "date_rate": "2014-05-20T15:34:07",
+              "description": "checkout 2161",
+              "id": 5100,
+              "is_waiting": "False",
+              "reference_id": "R077560204",
+              "resource_uri": "",
+              "status": "CO",
+              "to_address": "1343245235325235235",
+              "txn_id": "1235",
+              "txn_type": "BTC"
+            },
+            {
+              "amount": 0.1,
+              "btc": "0.00011743",
+              "client_email": null,
+              "currency": "ARS",
+              "date_created": "2014-05-21T10:33:14",
+              "date_paid": "2014-05-21T10:34:41",
+              "date_rate": "2014-05-21T10:33:17",
+              "description": "checkout 2192",
+              "id": 5153,
+              "is_waiting": "False",
+              "reference_id": "R564617532",
+              "resource_uri": "",
+              "status": "CO",
+              "to_address": "1343245235325235235",
+              "txn_id": "1236",
+              "txn_type": "BTC"
+            }
+          ]
+        }
+    http_version:
+  recorded_at: Thu, 31 Dec 2015 14:11:51 GMT
+recorded_with: VCR 2.9.3

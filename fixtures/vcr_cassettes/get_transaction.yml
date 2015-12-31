@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bitpagos.com/api/v1/transaction/dSC7qcJR2k8JfEK6r4sXPa
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept: application/json
+      Accept-Encoding: gzip, deflate
+      Authorization: ApiKey 4141414141414
+      Content-Type: application/json
+      User-Agent: Ruby
+  response:
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    headers:
+      Server: cloudflare-nginx
+      Date: Thu, 31 Dec 2015 13:50:11 GMT
+      Content-Type: text/html; charset=utf-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Xss-Protection: 1; mode=block
+      Content-Language: es
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=15552000
+      Vary: Accept-Language, Cookie
+      Location: https://www.bitpagos.com/api/v1/transaction/dSC7qcJR2k8JfEK6r4sXPa/
+      X-Frame-Options: DENY
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Thu, 31 Dec 2015 13:50:11 GMT
+- request:
+    method: get
+    uri: https://www.bitpagos.com/api/v1/transaction/dSC7qcJR2k8JfEK6r4sXPa/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept: application/json
+      Accept-Encoding: gzip, deflate
+      Authorization: ApiKey 4141414141414
+      Content-Type: application/json
+      Cookie: __cfduid=d639b56610927ca095ab86bcc34eddd061451569811
+      User-Agent: Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server: cloudflare-nginx
+      Date: Thu, 31 Dec 2015 13:50:12 GMT
+      Content-Type: application/json
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Xss-Protection: 1; mode=block
+      Content-Language: es-ar
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=15552000
+      Vary: Accept, Accept-Language, Cookie
+      Cache-Control: no-cache
+      X-Frame-Options: DENY
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "amount": 424.0,
+          "btc": "0.06413700",
+          "client_email": null,
+          "currency": "ARS",
+          "date_created": "2015-12-17T12:29:11.746276",
+          "date_paid": null,
+          "date_rate": "2015-12-17T12:29:12.642111",
+          "description": "checkout 28928",
+          "id": 98814,
+          "is_waiting": "True",
+          "reference_id": "R616613214",
+          "resource_uri": "",
+          "status": "WA",
+          "to_address": "AbdgDGJFfsjF124124153Abcddbg",
+          "txn_id": "dSC7qcJR2k8JfEK6r4sXPa",
+          "txn_type": null
+        }
+    http_version:
+  recorded_at: Thu, 31 Dec 2015 13:50:12 GMT
+recorded_with: VCR 2.9.3
