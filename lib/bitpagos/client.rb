@@ -59,8 +59,12 @@ module Bitpagos
     def retrieve_transactions(query = nil, transaction_id = nil)
       headers.merge!(params: { status: query }) if query
       url = "#{API_BASE}/transaction/#{transaction_id}"
-      response = RestClient.get(url, headers)
-      JSON.parse(response)
+      begin
+        response = RestClient.get(url, headers)
+        JSON.parse(response)
+      rescue RestClient::Unauthorized => error
+        raise Bitpagos::Errors::Unauthorized.new(error.message)
+      end
     end
   end
 end
