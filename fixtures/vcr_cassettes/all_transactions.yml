@@ -7,96 +7,99 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept: application/json
-      Accept-Encoding: gzip, deflate
-      Authorization: ApiKey 4141414141414
-      Content-Type: application/json
-      User-Agent: Ruby
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - ApiKey 4141414141414
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server: cloudflare-nginx
-      Date: Thu, 31 Dec 2015 13:28:35 GMT
-      Content-Type: application/json
-      Transfer-Encoding: chunked
-      Connection: keep-alive
-      X-Xss-Protection: 1; mode=block
-      Content-Language: es-ar
-      X-Content-Type-Options: nosniff
-      Strict-Transport-Security: max-age=15552000
-      Vary: Accept, Accept-Language, Cookie
-      Cache-Control: no-cache
-      X-Frame-Options: DENY
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Thu, 31 Dec 2015 15:51:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Language:
+      - es-ar
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15552000
+      Vary:
+      - Accept, Accept-Language, Cookie
+      Cache-Control:
+      - no-cache
+      X-Frame-Options:
+      - DENY
+      Content-Encoding:
+      - gzip
     body:
-      encoding: UTF-8
-      string: |-
-        {
-          "meta": {
-            "limit": 20,
-            "next": "?limit=20&offset=20",
-            "offset": 0,
-            "previous": null,
-            "total_count": 3
-          },
-          "objects": [
-            {
-              "amount": 424.0,
-              "btc": "0.06421300",
-              "client_email": null,
-              "currency": "ARS",
-              "date_created": "2015-12-14T08:35:20.877978",
-              "date_paid": null,
-              "date_rate": "2015-12-14T08:35:22.241273",
-              "description": "checkout 28675",
-              "id": 97650,
-              "is_waiting": "True",
-              "reference_id": "R073158070",
-              "resource_uri": "",
-              "status": "WA",
-              "to_address": "AbdgDGJFfsjF124124153Abcddbg",
-              "txn_id": "1239",
-              "txn_type": null
-            },
-            {
-              "amount": 494.0,
-              "btc": "0.07479800",
-              "client_email": null,
-              "currency": "ARS",
-              "date_created": "2015-12-14T08:35:47.178638",
-              "date_paid": null,
-              "date_rate": "2015-12-14T08:35:47.897405",
-              "description": "checkout 28676",
-              "id": 97652,
-              "is_waiting": "True",
-              "reference_id": "R221541565",
-              "resource_uri": "",
-              "status": "WA",
-              "to_address": "AbdgDGJFfsjF124124153Abcddbg",
-              "txn_id": "1240",
-              "txn_type": null
-            },
-            {
-              "amount": 424.0,
-              "btc": "0.06427200",
-              "client_email": null,
-              "currency": "ARS",
-              "date_created": "2015-12-14T10:58:04.704873",
-              "date_paid": null,
-              "date_rate": "2015-12-14T10:58:05.789205",
-              "description": "checkout 28683",
-              "id": 97701,
-              "is_waiting": "True",
-              "reference_id": "R826177101",
-              "resource_uri": "",
-              "status": "WA",
-              "to_address": "AbdgDGJFfsjF124124153Abcddbg",
-              "txn_id": "1241",
-              "txn_type": null
-            }
-          ]
-        }
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2yQy04DMQxFfyXKglU7StJM5yEhVCHxAaUSCxajNOOBwExS
+        JQ4PVfw7cgpiw873+vjayZkvgIb37MxntzjkPVNixbiHD6r5TXGvlbgK05SA
+        Kr5i/CJ4z4g9RXhzISfeM5/necU4BjTzYEP2xGgt2i8aOr6ARcIez9wsv12l
+        K0o5oqWFohJN1wotyh47O/A4wGLc/Bdvc4zg7Sfxu/09gaNBGGwEgzCSrYSs
+        11KthT5I2QvRS1Ft2062JbbQJ+MI/Tm5WNEg/D8tq2az2WhVpiHZ6E7ogifY
+        PoN9DRmZaqUu8SW307VWJNLwbhw6/0TwIWYgJMIE9AYYCsz3qq7VttHb+tJN
+        IUcLQ46OuuQlNFj+mD/sSGMYzDhGSMWTndZ3rrn9BgAA///MmduOskoWx19l
+        HmBCqladuVNRiSIRRUVuJqIoasQzKsm8+0To7t1+cbcNMTtzz9KkfvwPtahU
+        xlZ6itrVQ9jvO1PrtLDdZn3Y7NezmWv88X+cpOPJ0XfnxLA73GjVaDId5L97
+        jf9zuu3u53A/mv/++1/fYak/YSlQHN4NiwiNcqSYKgWLSA0YKMVfwcIPsEgB
+        WJgywiklJWGZYJo3U4RCDRPK5qw3OWPbr1onZ3Zx0347foTVDDaHivB9R7Vn
+        i9XUu9UrfvwF9O9h/RPKIjpSGkhFSBlY5K5LoIiTl8rKHvhSFv09LEkQA4lE
+        WVhQm7ZlZ0cva6DGIibnWxhtFW533As29hUcPMJKD2QcqIa5bXg35hj7fjif
+        738B659QFtEJ06RggmeHUdAGiU64ximTkKP+wQazn/+CxQrA4oAFYJb5aAkb
+        bNWjeLyw7MU4OgXb+uLaO3eg5kzEdNFoBK6RecJfNnj0m0N7djIWc7OVtnx+
+        HB6Zu3xtg8+UxclbbRALHZAmkaSyhLLu01jjiBOeJ94PsLIz+YTF+O9hISKl
+        wILIkrBYHO2q3fOxM9xKd9K49bpxzPya28cpazf2zc4jLBi7dpiul5NudGjP
+        4DC10vFfzxTJLIIIfjcsKjQQGPHsMIopCwudSg0RhOFlZokHWOL3sAghknCU
+        vw4llMU3p4RPHTVzJ/317tzokql38sIk2ApnE1wvySOsznJ4Paz7g7TfiYEP
+        1Whr88svbPCJsoCiN8KiOuY6ME1ijHDWAIrAyqe5JrACTF8oi3/PLE7uLfe3
+        bRBxBJKysm2w1qp4k5oc48mo3t4NBsG2OVT4ouKRd4l3k1XrEZYahrt5NDlD
+        OvcjdZAwNaqr7msbfJJZBLF3w2KgEaCACttgBotRDQMnOBPODzaYR+KHDXKC
+        C8BiEnEpRPYylVCWEZ9HJlv03KWoOUFz3+/5m2rzWmVTf2Lb18B7hHXr0IT0
+        1DAxPNuMxt5tvidk+BrWE2VR8c7MojpwnSANMcJU4YLxOS0loeJVZuXXpC9Y
+        Bao7IoQLzkn2OpSAVQ36syWY6S4mOzbGrcSe2sM+yNBIJ616Nzk8wvJ8Ohrv
+        qyo8qPoyNibBatEIo9ewniiLCfFWZQHXGdcow7h4G8xgMaEBQhxe2uD3gsFJ
+        gepOCBWAaemCwe0aFalaxcKeXrr9cZCIYKPwIcCqvkpazvkRVsPn1m1dXbU2
+        Nfd2kNbFDA0ry/PCl2IM74QldFA6UA1jTosXjM9piRhWr2DlC5IPZQlcoA1i
+        ySiTuPQGo7rBo3BjWVXnEMnh6NDcTC6NLe0k+63f6wlv/gjr2m8ny8BJKOsc
+        p023vUuArL7uYkXaICCQb1SW0JnSQWhCEIby1CmwbsqnpSYoY/hVG5TfM0tA
+        ARsExgTjAkoXjOjU3F+Uv6+3m83u/Oqvt0EbpuMGA2vn4XD2CGtw6fF0l3oR
+        n/DhnAxI7Qi1xWtlPckshN65bsqOG2FNKgb58q4wLASalEJ+3NL+/p4lv7dB
+        AQV2gwhJTCjnpTPLrBLVxL0VTBIj3ioSrMl50Nld5/tdt7Nc/VEwotqlF3J3
+        nKp1c9Gy+1bt7I3ccrDkO21Q6gjfF0aUEcoK37PyaawRhD5vaT/Aynzy0wah
+        SGZhiRCDPBVLFAx7tVhU9/vbDJ8dHLhxEg1YWGWez61QnNqx86gs6nQu3UE4
+        O9ejczJ1O/OrR03/NawnBeO9mZUdNxEaopyx3MgK2ODnNJeKicykfqju8nsb
+        FFBo3cQESJz7aAlYgjeM49RviTVgtfC29VsldjpqbIi40sNVbD7COhhm0EvO
+        m32wMd1qtAp9J2Sj17Ce2eC7lQX37R5wyqBwdZc6gjtqQJSR/Er9g7K+t0EB
+        BQqGZIhK+PgIUwIWt43EutnLaq93aNRmp+0ltcmIWLHVd/zKrPaHsjZBMNi7
+        m/XmnE57w1N1MYgG5/+HNih1RHQEGiJM5p/jCiormxaSU/ayDX5fNwkosG7i
+        jN+lJbLQKwFLWEOXzMN+OPfbETmEM88cdY7MZ1NmbrsB3B6VFRqy1eSkfnV8
+        yxjFZrfRDZ1frJue2CCod24wpA5Ip0zjDGTuU8Vg3ae5RqXC5KUNZguSz8wi
+        nwXjfwAAAP//vJnbboJAEIbfiLAzu8B6ByxCipIVlEOTXmhNsTae2mqFpO/e
+        CAk1TROENH2Avfoz/8x+3w3ykaGqM43VerNHWJLY4dkm0W7ORk/SeDGWrr9Y
+        59kh2r6LKI+biqtlZ5Ck5dHSZoUHxnH5qm2tN8e74XT/jQ3+KcitwiJcQQYq
+        7cwGq9egKgQJg9YarJqkCasDbqIE9Ive7hvWXZQArvPH9CT52BGOU86OYIWZ
+        Jw4bLTejqhO+FYm7HArb12c8cGAvqSvcIpRZ+876j8mCAaKCOkBNWjtOFgyQ
+        KioSqrfVIL82xTp2ODAYo4iAal82OHETvprGvik/ONyv5G5hJzb3J+l85J15
+        yX/Ix2I6jgNvM3wODCmkP9+bpwNtzvvrT/HD5xcAAAD//wMAwqo6kPshAAA=
     http_version:
-  recorded_at: Thu, 31 Dec 2015 13:28:35 GMT
+  recorded_at: Thu, 31 Dec 2015 15:51:43 GMT
 recorded_with: VCR 2.9.3
