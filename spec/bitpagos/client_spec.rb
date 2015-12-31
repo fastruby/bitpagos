@@ -64,13 +64,13 @@ RSpec.describe Bitpagos::Client do
     it "returns all the transactions within the objects key" do
       VCR.use_cassette("all_transactions") do
         result = subject.all_transactions
-        expect(result["objects"].size).to eq 3
+        expect(result["objects"].size).to eq 20
       end
     end
 
     it "returns transaction data for each transaction in the objects array" do
-      first_expected_hash = { "amount" => 424.0, "btc" => "0.06421300" }
-      second_expected_hash = { "amount" => 494.0, "btc" => "0.07479800" }
+      first_expected_hash = { "amount" => 424.0, "btc" => "0.07980400" }
+      second_expected_hash = { "amount" => 494.0, "btc" => "0.09296200" }
       VCR.use_cassette("all_transactions") do
         result = subject.all_transactions
         expect(result["objects"][0]).to include first_expected_hash
@@ -83,7 +83,7 @@ RSpec.describe Bitpagos::Client do
     it "returns the transaction count" do
       VCR.use_cassette("all_transactions") do
         result = subject.transaction_count
-        expect(result).to eq 3
+        expect(result).to eq 4408
       end
     end
   end
