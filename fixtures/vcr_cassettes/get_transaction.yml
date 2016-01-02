@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bitpagos.com/api/v1/transaction/dSC7qcJR2k8JfEK6r4sXPa
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - ApiKey 4141414141414
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Thu, 31 Dec 2015 15:51:44 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Language:
+      - es
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15552000
+      Vary:
+      - Accept-Language, Cookie
+      Location:
+      - https://www.bitpagos.com/api/v1/transaction/dSC7qcJR2k8JfEK6r4sXPa/
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Thu, 31 Dec 2015 15:51:44 GMT
+- request:
+    method: get
+    uri: https://www.bitpagos.com/api/v1/transaction/dSC7qcJR2k8JfEK6r4sXPa/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - ApiKey 4141414141414
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Thu, 31 Dec 2015 15:51:44 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Language:
+      - es-ar
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15552000
+      Vary:
+      - Accept, Accept-Language, Cookie
+      Cache-Control:
+      - no-cache
+      X-Frame-Options:
+      - DENY
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2yQS0/DMBCE/0rkcxtlXeM8bhEqSEWVUFKJwiUyzraYpk7x
+        Q1Ah/jvaUDhxnNlvZrX7ydRxjDawKhFcpNksYc9BsyphWZpJAYs8y9gsYXow
+        aEOHR2UGViU2DgO50Tm0+kx83bQE9ipgpx2qgD3ZPIOrOfA55BvgFS8rgDQX
+        kufyjz4pQ+ilcypwKuD/aZ5KwQFgSqPXzpyCGS3B+gX1YYwh4UXJCwKm3rIo
+        QJDw3bsywdg9wRsXkRCHO6QbsJtg1kiQEhYcxM/Uj9Fp7KIzNCXPBxWiJ/VQ
+        kw5jp/reoZ88WGN7foWtxX39eCtXWjZPTy3Wy/WuP+YHd1NOmQ972de31/mb
+        XjX8UKx2yzvphN/eq18mnE/0B3rN1zcAAAD//wMAMvgAMqsBAAA=
+    http_version:
+  recorded_at: Thu, 31 Dec 2015 15:51:44 GMT
+recorded_with: VCR 2.9.3
