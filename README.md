@@ -1,8 +1,10 @@
 # Bitpagos API
-Ruby wrapper for the Bitpagos payments API
+
+Ruby wrapper for the [Bitpagos](https://www.bitpagos.com) Payments API
 
 [![Gem Version](https://badge.fury.io/rb/bitpagos.svg)](http://badge.fury.io/rb/bitpagos)
 [![Build Status](https://travis-ci.org/ombulabs/bitpagos.svg?branch=master)](https://travis-ci.org/ombulabs/bitpagos)
+[![Code Climate](https://codeclimate.com/github/ombulabs/bitpagos/badges/gpa.svg)](https://codeclimate.com/github/ombulabs/bitpagos)
 
 ## Getting Started
 
@@ -52,7 +54,7 @@ result = client.transactions(status: :waiting)
 Pagination is available by providing limit and offset:
 
 ```ruby
-result = client.transactions({status: :completed, limit: 20, offset: 60})
+result = client.transactions(status: :completed, limit: 20, offset: 60)
 ```
 
 ## Contributing & Development
