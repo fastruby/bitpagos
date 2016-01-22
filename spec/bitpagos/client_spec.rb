@@ -32,7 +32,7 @@ RSpec.describe Bitpagos::Client do
 
       it "returns a 401 code" do
         VCR.use_cassette("unauthorized_request") do
-          expect { subject.all_transactions }.to raise_exception(exception)
+          expect { subject.transactions }.to raise_exception(exception)
         end
       end
     end
@@ -53,17 +53,17 @@ RSpec.describe Bitpagos::Client do
     end
   end
 
-  describe "#all_transactions" do
+  describe "#transactions" do
     it "returns all the transactions in a hash" do
       VCR.use_cassette("all_transactions") do
-        result = subject.all_transactions
+        result = subject.transactions
         expect(result).to be_a Hash
       end
     end
 
     it "returns all the transactions within the objects key" do
       VCR.use_cassette("all_transactions") do
-        result = subject.all_transactions
+        result = subject.transactions
         expect(result["objects"].size).to eq 20
       end
     end
@@ -72,9 +72,38 @@ RSpec.describe Bitpagos::Client do
       first_expected_hash = { "amount" => 424.0, "btc" => "0.07980400" }
       second_expected_hash = { "amount" => 494.0, "btc" => "0.09296200" }
       VCR.use_cassette("all_transactions") do
-        result = subject.all_transactions
+        result = subject.transactions
         expect(result["objects"][0]).to include first_expected_hash
         expect(result["objects"][1]).to include second_expected_hash
+      end
+    end
+
+    context "paginated transactions" do
+      let(:second_page) { {offset: 20, limit: 20} }
+      it "returns the second page of all transactions" do
+        VCR.use_cassette("second_page_only") do
+          result = subject.transactions(second_page)
+          expect(result["meta"]["offset"]).to eq(20)
+          expect(result["meta"]["limit"]).to eq(20)
+          expect(result["objects"].count).to eq(20)
+        end
+      end
+    end
+
+    context "paginated & completed transactions" do
+      let(:first_page_completed) { {offset: 0, limit: 20, status: :completed} }
+      it "returns the first page of completed transactions" do
+        VCR.use_cassette("first_page_completed_only") do
+          result = subject.transactions(first_page_completed)
+          expect(result["meta"]["offset"]).to eq(0)
+          expect(result["meta"]["limit"]).to eq(20)
+          expect(result["objects"].count).to eq(20)
+
+          types = result["objects"].map { |x| x["status"] }
+          expect(types).to include("CO")
+          expect(types).not_to include("WA")
+          expect(types).not_to include("PE")
+        end
       end
     end
   end
@@ -128,6 +157,32 @@ RSpec.describe Bitpagos::Client do
         result = subject.completed_transactions
 
         expect(result["objects"][0]["txn_type"]).to eq("BTC")
+      end
+    end
+  end
+
+  describe "#get_transaction_type_from_symbol" do
+    let(:transaction_type) { :completed }
+    it "returns the proper transaction type from the given symbol" do
+      type = subject.send(:get_transaction_type_from_symbol, transaction_type)
+      expect(type).to eq(Bitpagos::Client::COMPLETED)
+    end
+
+    context "if no transaction type for the given symbol" do
+      let(:transaction_type) { :none }
+      let(:exception) { Bitpagos::Errors::InvalidTransactionType }
+      it "returns an exception" do
+        expect do
+          subject.send(:get_transaction_type_from_symbol, transaction_type)
+        end.to raise_exception(exception)
+      end
+    end
+
+    context "if no transaction type given" do
+      let(:transaction_type) { nil }
+      it "returns nil" do
+        type = subject.send(:get_transaction_type_from_symbol, transaction_type)
+        expect(type).to be_nil
       end
     end
   end

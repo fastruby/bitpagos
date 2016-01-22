@@ -22,34 +22,59 @@ module Bitpagos
       retrieve_transactions(nil, transaction_id)
     end
 
-    def all_transactions
-      retrieve_transactions
+    # Retrieve all transactions, or specify them with parameters, to retrieve
+    # allow retrieving paginated transactions.
+    #
+    # @param [Hash] Allows to specify transaction type, limit or offset
+    # @option [Symbol] status (:pending, :waiting, :completed, :partially_paid)
+    # @option [Integer] offset
+    # @option [Integer] limit
+    # @return [Hash]
+    def transactions(params = {})
+      if status = params[:status]
+        params[:status] = get_transaction_type_from_symbol(status)
+      end
+      retrieve_transactions(params)
     end
 
     def completed_transactions
-      retrieve_transactions(COMPLETED)
+      retrieve_transactions({status: COMPLETED})
     end
 
     def waiting_transactions
-      retrieve_transactions(WAITING)
+      retrieve_transactions({status: WAITING})
     end
 
     def pending_transactions
-      retrieve_transactions(PENDING)
+      retrieve_transactions({status: PENDING})
     end
 
     def partially_paid_transactions
-      retrieve_transactions(PARTIALLY_PAID)
+      retrieve_transactions({status: PARTIALLY_PAID})
     end
 
     # Returns the total count of transactions in all states.
     #
     # @return [Integer] Total transaction count
     def transaction_count
-      all_transactions["meta"]["total_count"]
+      transactions["meta"]["total_count"]
     end
 
     private
+
+    # Takes a symbol and returns the proper transaction type.
+    #
+    # @param [Symbol] Can be :pending, :waiting, :completed or :partially_paid
+    # @return [String] Returns the corresponding "PE", "WA", "CO" or "PP"
+    def get_transaction_type_from_symbol(transaction_type)
+      begin
+        target_type = transaction_type.to_s.upcase
+        return if target_type.empty?
+        self.class.const_get(target_type)
+      rescue NameError => error
+        raise Bitpagos::Errors::InvalidTransactionType.new(error.message)
+      end
+    end
 
     # Hits the Bitpagos transaction API, returns a hash with results
     #
@@ -57,7 +82,7 @@ module Bitpagos
     # @param [String] Transaction ID
     # @return [Hash]
     def retrieve_transactions(query = nil, transaction_id = nil)
-      headers.merge!(params: { status: query }) if query
+      headers.merge!(params: query) if query
       url = "#{API_BASE}/transaction/#{transaction_id}"
       begin
         response = RestClient.get(url, headers)
