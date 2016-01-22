@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bitpagos (0.3.1)
+    bitpagos (1.0.0)
       rest-client (~> 1.8)
 
 GEM
@@ -69,4 +69,4 @@ DEPENDENCIES
   webmock (~> 1.21)
 
 BUNDLED WITH
-   1.10.3
+   1.11.2
