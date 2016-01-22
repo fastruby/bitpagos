@@ -38,19 +38,19 @@ module Bitpagos
     end
 
     def completed_transactions
-      retrieve_transactions({status: COMPLETED})
+      retrieve_transactions(status: COMPLETED)
     end
 
     def waiting_transactions
-      retrieve_transactions({status: WAITING})
+      retrieve_transactions(status: WAITING)
     end
 
     def pending_transactions
-      retrieve_transactions({status: PENDING})
+      retrieve_transactions(status: PENDING)
     end
 
     def partially_paid_transactions
-      retrieve_transactions({status: PARTIALLY_PAID})
+      retrieve_transactions(status: PARTIALLY_PAID)
     end
 
     # Returns the total count of transactions in all states.
@@ -65,7 +65,7 @@ module Bitpagos
     # Takes a symbol and returns the proper transaction type.
     #
     # @param [Symbol] Can be :pending, :waiting, :completed or :partially_paid
-    # @return [String] Returns the corresponding "PE", "WA", "CO" or "PP"
+    # @return [String,nil] Returns the corresponding "PE", "WA", "CO" or "PP"
     def get_transaction_type_from_symbol(transaction_type)
       begin
         target_type = transaction_type.to_s.upcase
