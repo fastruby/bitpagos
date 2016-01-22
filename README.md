@@ -17,7 +17,43 @@ If you intend to use it within an application, add `gem "bitpagos"` to your
 
 ## Usage
 
+After installing the gem, you need to obtain your Bitpagos API key from their
+website, in your control panel, [here](https://www.bitpagos.com/api/settings).
 
+Initialize a Bitpagos client by running:
+
+```ruby
+your_api_key = "ABCDEFG123456789"
+client = Bitpagos::Client.new(your_api_key)
+```
+
+To get a transaction by its id:
+
+```ruby
+client.get_transaction("12345")
+```
+
+To get only the completed or waiting transactions:
+
+```ruby
+result = client.completed_transactions
+
+result = client.waiting_transactions
+```
+
+You can also use the `#transactions` method like this:
+
+```ruby
+result = client.transactions(status: :completed)
+
+result = client.transactions(status: :waiting)
+```
+
+Pagination is available by providing limit and offset:
+
+```ruby
+result = client.transactions({status: :completed, limit: 20, offset: 60})
+```
 
 ## Contributing & Development
 
